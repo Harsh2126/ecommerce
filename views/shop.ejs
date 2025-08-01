@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop - E-Commerce</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>E-Commerce</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/wishlist" class="nav-link">
+                    <i class="fas fa-heart"></i>
+                    Wishlist
+                </a>
+                <a href="/orders" class="nav-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    Orders
+                </a>
+                <span class="welcome-text">Welcome, <%= user.name %></span>
+                <a href="/auth/logout" class="nav-link logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="shop-container">
+        <div class="shop-header">
+            <h1><i class="fas fa-store"></i> Shop</h1>
+            <p>Discover amazing products at unbeatable prices</p>
+        </div>
+
+        <div class="shop-filters">
+            <div class="filter-section">
+                <h3>Categories</h3>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-category="all">All Products</button>
+                    <button class="filter-btn" data-category="electronics">Electronics</button>
+                    <button class="filter-btn" data-category="clothing">Clothing</button>
+                    <button class="filter-btn" data-category="books">Books</button>
+                    <button class="filter-btn" data-category="home">Home & Garden</button>
+                </div>
+            </div>
+            <div class="search-section">
+                <input type="text" id="searchInput" placeholder="Search products..." class="search-input">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+
+        <div class="products-grid">
+            <!-- Electronics -->
+            <div class="product-card" data-category="electronics">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400&h=300&fit=crop&crop=center" alt="Premium Smartphone">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="1">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Smartphone</h3>
+                    <p class="product-description">Latest smartphone with advanced features</p>
+                    <div class="product-price">
+                        <span class="price">$699.99</span>
+                        <span class="original-price">$899.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.8)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="1">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="electronics">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1496181133206-80ce9b88a853?w=400&h=300&fit=crop&crop=center" alt="Gaming Laptop">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="2">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Gaming Laptop</h3>
+                    <p class="product-description">High-performance gaming laptop</p>
+                    <div class="product-price">
+                        <span class="price">$1,299.99</span>
+                        <span class="original-price">$1,599.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.2)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="2">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Clothing -->
+            <div class="product-card" data-category="clothing">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop&crop=center" alt="Premium Cotton T-Shirt">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="3">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Premium Cotton T-Shirt</h3>
+                    <p class="product-description">Comfortable and stylish cotton t-shirt</p>
+                    <div class="product-price">
+                        <span class="price">$24.99</span>
+                        <span class="original-price">$34.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.9)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="3">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <div class="product-card" data-category="clothing">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1542272604-787c3835535d?w=400&h=300&fit=crop&crop=center" alt="Classic Denim Jeans">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="4">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Classic Denim Jeans</h3>
+                    <p class="product-description">Timeless denim jeans for everyday wear</p>
+                    <div class="product-price">
+                        <span class="price">$59.99</span>
+                        <span class="original-price">$79.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="far fa-star"></i>
+                        <span>(4.1)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="4">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Books -->
+            <div class="product-card" data-category="books">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=400&h=300&fit=crop&crop=center" alt="Bestseller Novel">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="5">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Bestseller Novel</h3>
+                    <p class="product-description">Award-winning fiction novel</p>
+                    <div class="product-price">
+                        <span class="price">$14.99</span>
+                        <span class="original-price">$19.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.7)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="5">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+
+            <!-- Home & Garden -->
+            <div class="product-card" data-category="home">
+                <div class="product-image">
+                    <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=400&h=300&fit=crop&crop=center" alt="Indoor Plant Set">
+                    <div class="product-overlay">
+                        <button class="wishlist-btn" data-product="6">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Indoor Plant Set</h3>
+                    <p class="product-description">Beautiful indoor plants for your home</p>
+                    <div class="product-price">
+                        <span class="price">$39.99</span>
+                        <span class="original-price">$49.99</span>
+                    </div>
+                    <div class="product-rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <span>(4.6)</span>
+                    </div>
+                    <button class="btn btn-primary add-to-cart-btn" data-product="6">
+                        <i class="fas fa-shopping-cart"></i>
+                        Add to Cart
+                    </button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/shop.js"></script>
+</body>
+</html> 

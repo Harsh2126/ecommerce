@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wishlist - E-Commerce</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="/">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>E-Commerce</span>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="/dashboard" class="nav-link">Dashboard</a>
+                <a href="/shop" class="nav-link">
+                    <i class="fas fa-store"></i>
+                    Shop
+                </a>
+                <a href="/orders" class="nav-link">
+                    <i class="fas fa-shopping-bag"></i>
+                    Orders
+                </a>
+                <span class="welcome-text">Welcome, <%= user.name %></span>
+                <a href="/auth/logout" class="nav-link logout-btn">
+                    <i class="fas fa-sign-out-alt"></i>
+                    Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="wishlist-container">
+        <div class="wishlist-header">
+            <h1><i class="fas fa-heart"></i> My Wishlist</h1>
+            <p>Your saved products and favorites</p>
+        </div>
+
+        <div class="wishlist-content">
+            <div class="wishlist-stats">
+                <div class="stat-card">
+                    <i class="fas fa-heart"></i>
+                    <div class="stat-info">
+                        <h3>Total Items</h3>
+                        <p>4 products</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <div class="stat-info">
+                        <h3>Total Value</h3>
+                        <p>$1,999.96</p>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-percentage"></i>
+                    <div class="stat-info">
+                        <h3>Average Discount</h3>
+                        <p>22% off</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wishlist-actions">
+                <button class="btn btn-primary" id="addAllToCart">
+                    <i class="fas fa-shopping-cart"></i>
+                    Add All to Cart
+                </button>
+                <button class="btn btn-secondary" id="clearWishlist">
+                    <i class="fas fa-trash"></i>
+                    Clear Wishlist
+                </button>
+            </div>
+
+            <div class="wishlist-items">
+                <!-- Wishlist Item 1 -->
+                <div class="wishlist-item" data-product="1">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=200&h=200&fit=crop&crop=center" alt="Premium Smartphone">
+                    </div>
+                    <div class="item-details">
+                        <h3>Premium Smartphone</h3>
+                        <p class="item-description">Latest smartphone with advanced features and high-quality camera</p>
+                        <div class="item-category">
+                            <span class="category-tag">Electronics</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.8)</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-info">
+                            <span class="current-price">$699.99</span>
+                            <span class="original-price">$899.99</span>
+                            <span class="discount">22% OFF</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary add-to-cart-btn" data-product="1">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn btn-danger remove-from-wishlist" data-product="1">
+                                <i class="fas fa-trash"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 2 -->
+                <div class="wishlist-item" data-product="3">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=200&h=200&fit=crop&crop=center" alt="Premium Cotton T-Shirt">
+                    </div>
+                    <div class="item-details">
+                        <h3>Premium Cotton T-Shirt</h3>
+                        <p class="item-description">Comfortable and stylish cotton t-shirt for everyday wear</p>
+                        <div class="item-category">
+                            <span class="category-tag">Clothing</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.9)</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-info">
+                            <span class="current-price">$24.99</span>
+                            <span class="original-price">$34.99</span>
+                            <span class="discount">29% OFF</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary add-to-cart-btn" data-product="3">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn btn-danger remove-from-wishlist" data-product="3">
+                                <i class="fas fa-trash"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 3 -->
+                <div class="wishlist-item" data-product="5">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?w=200&h=200&fit=crop&crop=center" alt="Bestseller Novel">
+                    </div>
+                    <div class="item-details">
+                        <h3>Bestseller Novel</h3>
+                        <p class="item-description">Award-winning fiction novel that will keep you engaged</p>
+                        <div class="item-category">
+                            <span class="category-tag">Books</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.7)</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-info">
+                            <span class="current-price">$14.99</span>
+                            <span class="original-price">$19.99</span>
+                            <span class="discount">25% OFF</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary add-to-cart-btn" data-product="5">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn btn-danger remove-from-wishlist" data-product="5">
+                                <i class="fas fa-trash"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Wishlist Item 4 -->
+                <div class="wishlist-item" data-product="6">
+                    <div class="item-image">
+                        <img src="https://images.unsplash.com/photo-1466692476868-aef1dfb1e735?w=200&h=200&fit=crop&crop=center" alt="Indoor Plant Set">
+                    </div>
+                    <div class="item-details">
+                        <h3>Indoor Plant Set</h3>
+                        <p class="item-description">Beautiful indoor plants to brighten up your living space</p>
+                        <div class="item-category">
+                            <span class="category-tag">Home & Garden</span>
+                        </div>
+                        <div class="item-rating">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <span>(4.6)</span>
+                        </div>
+                    </div>
+                    <div class="item-price">
+                        <div class="price-info">
+                            <span class="current-price">$39.99</span>
+                            <span class="original-price">$49.99</span>
+                            <span class="discount">20% OFF</span>
+                        </div>
+                        <div class="item-actions">
+                            <button class="btn btn-primary add-to-cart-btn" data-product="6">
+                                <i class="fas fa-shopping-cart"></i>
+                                Add to Cart
+                            </button>
+                            <button class="btn btn-danger remove-from-wishlist" data-product="6">
+                                <i class="fas fa-trash"></i>
+                                Remove
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="empty-wishlist" style="display: none;">
+                <div class="empty-state">
+                    <i class="fas fa-heart-broken"></i>
+                    <h3>Your wishlist is empty</h3>
+                    <p>Start adding products to your wishlist to save them for later</p>
+                    <a href="/shop" class="btn btn-primary">
+                        <i class="fas fa-store"></i>
+                        Start Shopping
+                    </a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/js/wishlist.js"></script>
+</body>
+</html> 
